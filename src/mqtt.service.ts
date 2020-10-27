@@ -5,7 +5,7 @@ import { Client, Packet, IClientPublishOptions, IClientSubscribeOptions, ISubscr
 @Injectable()
 export class MqttService {
   constructor(
-    @Inject(MQTT_CLIENT_INSTANCE) private readonly client: Client,
+    @Inject(MQTT_CLIENT_INSTANCE) public readonly client: Client,
   ) {}
 
   subscribe(topic: string | string[], opts?: IClientSubscribeOptions): Promise<ISubscriptionGrant[]> {
